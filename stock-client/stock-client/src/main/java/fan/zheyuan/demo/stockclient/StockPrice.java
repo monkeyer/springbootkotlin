@@ -13,8 +13,4 @@ public class StockPrice {
     private String symbol;
     private Double price;
     private LocalDateTime time;
-
-    public String getSymbol() {
-        return symbol;
-    }
 }

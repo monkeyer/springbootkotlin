@@ -18,22 +18,22 @@ public class ChartController {
 
     @FXML
     public LineChart<String, Double> chart;
-    private StockClient webClientStockClient;
+    private StockClient stockClient;
 
-    public ChartController(StockClient webClientStockClient) {
-        this.webClientStockClient = webClientStockClient;
+    public ChartController(StockClient stockClient) {
+        this.stockClient = stockClient;
     }
 
     @FXML
     public void initialize() {
         String symbol1 = "SYMBOL1";
         final PriceSubscriber priceSubscriber1 = new PriceSubscriber(symbol1);
-        webClientStockClient.pricesFor(symbol1)
+        stockClient.pricesFor(symbol1)
                 .subscribe(priceSubscriber1);
 
         String symbol2 = "SYMBOL2";
         final PriceSubscriber priceSubscriber2 = new PriceSubscriber(symbol2);
-        webClientStockClient.pricesFor(symbol2)
+        stockClient.pricesFor(symbol2)
                 .subscribe(priceSubscriber2);
 
         ObservableList<Series<String, Double>> data = FXCollections.observableArrayList();

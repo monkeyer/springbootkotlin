@@ -11,7 +11,7 @@ class WebClientStockClientIntegrationTest {
     @Test
     void shouldRetrieveStockPricesFromTheService() {
         // given
-        WebClientStockClient webClientStockClient = new WebClientStockClient(webClient);
+        StockClient webClientStockClient = new WebClientStockClient(webClient);
 
         // when
         Flux<StockPrice> prices = webClientStockClient.pricesFor("SYMBOL");

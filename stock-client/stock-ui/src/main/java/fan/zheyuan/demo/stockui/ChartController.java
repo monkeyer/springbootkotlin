@@ -1,7 +1,7 @@
 package fan.zheyuan.demo.stockui;
 
+import fan.zheyuan.demo.stockclient.StockClient;
 import fan.zheyuan.demo.stockclient.StockPrice;
-import fan.zheyuan.demo.stockclient.WebClientStockClient;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,9 +18,9 @@ public class ChartController {
 
     @FXML
     public LineChart<String, Double> chart;
-    private WebClientStockClient webClientStockClient;
+    private StockClient webClientStockClient;
 
-    public ChartController(WebClientStockClient webClientStockClient) {
+    public ChartController(StockClient webClientStockClient) {
         this.webClientStockClient = webClientStockClient;
     }
 
